@@ -20,9 +20,10 @@ object Menu {
             
             1 - CRIAR ALUNO
             2 - LISTAR ALUNOS
-            3 - MATRICULAR ALUNO
-            4 - CRIAR FORMAÇÃO
-            5 - LISTAR ALUNOS MATRICULADOS
+            3 - Lista Cursos
+            4 - MATRICULAR ALUNO 
+            5 - CRIAR FORMAÇÃO
+            6 - LISTAR ALUNOS MATRICULADOS
             0 - SAIR DA APLICAÇÃO
             
             DIGITE O NÚMERO DA OPÇÃO DESEJADA:  
@@ -41,7 +42,16 @@ object Menu {
     }
 
     fun listUsers(){
-        println(ListUsers.listUsers)
+        for (user in ListUsers.listUsers!!) {
+            println(user)
+        }
+    }
+
+    fun listEducationalContent(){
+        for (content in ListEducationalContent.listEducationalContent!!){
+            println(content)
+        }
+
     }
 
     fun createEnroll(){

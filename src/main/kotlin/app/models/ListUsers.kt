@@ -1,6 +1,6 @@
 package app.models
 
 object ListUsers {
-    var listUsers: MutableList<User>? = mutableListOf()
+     var listUsers: MutableList<User>? = mutableListOf()
 
 }

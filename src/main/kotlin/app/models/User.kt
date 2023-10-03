@@ -7,7 +7,7 @@ import kotlin.random.Random
 data class User(val id: String, val name: String) {
 
     override fun toString(): String {
-        return "User(id=$id, name='$name')"
+        return "User: id=$id, name=$name"
     }
 
     companion object{
