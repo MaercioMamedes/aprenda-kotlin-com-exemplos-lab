@@ -1,8 +1,23 @@
 package app.models
 
-data class User(val id: Int, val name: String) {
-    override fun toString(): String {
+import app.models.ListUsers
+import java.util.*
+import kotlin.random.Random
 
-        return "{'id': '${this.id}', 'name: '${this.name}'}"
+data class User(val id: String, val name: String) {
+
+    override fun toString(): String {
+        return "User(id=$id, name='$name')"
+    }
+
+    companion object{
+
+        fun creteUser(name: String): User {
+            val id = name.take(2) + Random.nextInt(100,1000)
+            val user = User(id= id.uppercase(Locale.getDefault()), name=name)
+            ListUsers.listUsers?.add(user)
+
+            return user
+        }
     }
 }

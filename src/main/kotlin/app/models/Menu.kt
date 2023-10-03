@@ -2,10 +2,9 @@ package app.models
 
 import java.util.Scanner
 
-
+var scannerMenu = Scanner(System.`in`)
 
 object Menu {
-    private val scannerMenu = Scanner(System.`in`)
     fun header(){
         infix fun Int.times(str: String) = str.repeat(this)
         val lineWidth = 100
@@ -26,8 +25,7 @@ object Menu {
             5 - LISTAR ALUNOS MATRICULADOS
             0 - SAIR DA APLICAÇÃO
             
-            DIGITE O NÚMERO DA OPÇÃO DESEJADA: 
-            
+            DIGITE O NÚMERO DA OPÇÃO DESEJADA:  
         """.trimIndent()
         print(options)
     }
@@ -36,13 +34,14 @@ object Menu {
         print("Digite o nome do Aluno: ")
         val name = scannerMenu.nextLine() // fazer validação de entrada
 
-        val student:User = User(id=1, name=name)
+        val student:User = User.creteUser(name)
 
-        println(message = "Aluno $student matriculado com sucesso ")
+        println("Aluno $student matriculado com sucesso ")
+
     }
 
     fun listUsers(){
-        // escrever método para listar alunos
+        println(ListUsers.listUsers)
     }
 
     fun createEnroll(){
