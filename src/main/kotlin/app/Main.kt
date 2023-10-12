@@ -1,38 +1,33 @@
 package app
 
 import app.models.Menu
-import app.models.Training
 import java.util.Scanner
 
-// [Template no Kotlin Playground](https://pl.kotl.in/WcteahpyN)
+
+// Arquivo principal da aplicação, responsável pela renderização do menu e chamada das funções
 
 val menu = Menu
 var scanner = Scanner(System.`in`)
 var choice: Int? = null
-var training: Training? = null
 
 fun main() {
-    // TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
-    // TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
-
     createEducationalContent()
     createUsers()
     createTraining()
     loopMenu()
-
 }
 
 fun loopMenu(){
-    menu.header()
+    menu.header("DIGITAL SCHOOLS")
 
     do {
         menu.options()
-        choice = scanner.nextInt() // fazer validação de entrada
+        choice = scanner.nextInt()
 
 
         when (choice) {
             1 -> {
-                menu.createStudent()
+                menu.createUser()
                 loopMenu()
             }
 
@@ -49,7 +44,6 @@ fun loopMenu(){
             4 -> {
                 menu.createEnroll()
                 loopMenu()
-
             }
 
             5 -> {

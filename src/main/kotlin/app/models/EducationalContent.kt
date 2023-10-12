@@ -5,7 +5,7 @@ data class EducationalContent(val name: String, val time: Int, val level: Level)
     companion object{
         fun createEducationalContent(name: String, time: Int, level: Level): EducationalContent {
             val content = EducationalContent(name, time, level)
-            ListEducationalContent.listEducationalContent?.add(content)
+            ListEducationalContent.listEducationalContent.add(content)
 
             return content
         }

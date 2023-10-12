@@ -14,7 +14,7 @@ data class User(val id: String, val name: String) {
         fun creteUser(name: String): User {
             val id = name.take(2) + Random.nextInt(100,1000)
             val user = User(id= id.uppercase(Locale.getDefault()), name=name)
-            ListUsers.listUsers?.add(user)
+            ListUsers.listUsers.add(user)
 
             return user
         }

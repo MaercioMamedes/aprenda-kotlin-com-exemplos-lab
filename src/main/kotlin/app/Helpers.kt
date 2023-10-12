@@ -3,6 +3,8 @@ package app
 import app.models.*
 import kotlin.random.Random
 
+// módulo para inserir alguns objetos para cenário de testes
+
 fun createEducationalContent(){
 
     val listCourseName = listOf("Python", "Javascript", "PHP", "HTML5", "CSS3", "REACT.JS", "VUE.JS", "NODE")
@@ -29,8 +31,8 @@ fun createUsers(){
 }
 
 fun createTraining(): Training {
-    var content: MutableList<EducationalContent> = mutableListOf()
-    for (educationalContent in ListEducationalContent.listEducationalContent!!){
+    val content: MutableList<EducationalContent> = mutableListOf()
+    for (educationalContent in ListEducationalContent.listEducationalContent){
         if (educationalContent.name == "Python" || educationalContent.name == "PHP" || educationalContent.name == "NODE"){
             content.add(educationalContent)
         }
