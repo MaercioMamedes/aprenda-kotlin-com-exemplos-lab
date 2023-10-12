@@ -1,6 +1,7 @@
 package app
 
 import app.models.Menu
+import app.models.Training
 import java.util.Scanner
 
 // [Template no Kotlin Playground](https://pl.kotl.in/WcteahpyN)
@@ -8,13 +9,15 @@ import java.util.Scanner
 val menu = Menu
 var scanner = Scanner(System.`in`)
 var choice: Int? = null
+var training: Training? = null
 
 fun main() {
     // TODO("Analise as classes modeladas para este domínio de aplicação e pense em formas de evoluí-las.")
     // TODO("Simule alguns cenários de teste. Para isso, crie alguns objetos usando as classes em questão.")
 
-    createTraining()
+    createEducationalContent()
     createUsers()
+    createTraining()
     loopMenu()
 
 }
@@ -46,6 +49,7 @@ fun loopMenu(){
             4 -> {
                 menu.createEnroll()
                 loopMenu()
+
             }
 
             5 -> {
@@ -55,6 +59,11 @@ fun loopMenu(){
 
             6 -> {
                 menu.listEnrolledUsers()
+                loopMenu()
+            }
+
+            7 -> {
+                menu.listTraining()
                 loopMenu()
             }
 

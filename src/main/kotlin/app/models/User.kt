@@ -1,6 +1,5 @@
 package app.models
 
-import app.models.ListUsers
 import java.util.*
 import kotlin.random.Random
 

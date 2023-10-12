@@ -1,11 +1,9 @@
 package app
 
-import app.models.EducationalContent
-import app.models.Level
-import app.models.User
+import app.models.*
 import kotlin.random.Random
 
-fun createTraining(){
+fun createEducationalContent(){
 
     val listCourseName = listOf("Python", "Javascript", "PHP", "HTML5", "CSS3", "REACT.JS", "VUE.JS", "NODE")
     val listCourseTime = listOf(10, 40, 60, 80 )
@@ -28,4 +26,17 @@ fun createUsers(){
     for (name in listNameUsers){
         User.creteUser(name)
     }
+}
+
+fun createTraining(): Training {
+    var content: MutableList<EducationalContent> = mutableListOf()
+    for (educationalContent in ListEducationalContent.listEducationalContent!!){
+        if (educationalContent.name == "Python" || educationalContent.name == "PHP" || educationalContent.name == "NODE"){
+            content.add(educationalContent)
+        }
+    }
+
+    val training = Training(name = "Backend", content=content)
+    ListTraining.listTraining.add(training)
+    return training
 }
